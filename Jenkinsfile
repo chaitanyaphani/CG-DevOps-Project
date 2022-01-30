@@ -21,6 +21,9 @@ pipeline {
         }
         stage('Sonar Analysis') {
             steps {
+                withSonarQubeEnv('sonar') {
+                    sh 'mvn clean sonar:users'
+                }
                 echo 'Sonar Analysis done: Results at Sonar Server'
             }
         }
