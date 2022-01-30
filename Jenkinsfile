@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     stages {
-       stage('Setup parameters') {
+        stage('Setup parameters') {
            steps {
                script {properties([parameters([choice(choices: 'master\nfeature', description: 'select the branch to build ', name: 'branch')])])}
            }
@@ -30,14 +30,14 @@ pipeline {
                 sh 'mvn package'
             }
         }
-        stage('Deploy to Nexus') {
+/*        stage('Deploy to Nexus') {
             steps {
                 echo ' Pushing artifact to Nexus repo'
                 sh 'sudo cd /var/lib/jenkins/workspace/project/'
                 sh 'mvn deploy'
             }
         }
-
+*/
     }
 }
 
