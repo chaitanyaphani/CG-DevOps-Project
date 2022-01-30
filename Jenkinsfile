@@ -22,11 +22,11 @@ pipeline {
         stage('Sonar Analysis') {
             steps {
                 withSonarQubeEnv('sonar') {
-                    sh 'mvn clean ec2-user:ec2-user'
+                    sh 'mvn clean sonarr:sonarr'
                 }
                 echo 'Sonar Analysis done: Results at Sonar Server'
             }
-        }
+          }
         stage('Package') {
             steps {
                 echo 'Packaging....'
