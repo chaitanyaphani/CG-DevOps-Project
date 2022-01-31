@@ -34,14 +34,27 @@ pipeline {
                 sh 'mvn package'
             }
         }
-/*        stage('Deploy to Nexus') {
+        stage('Deploy to Nexus') {
             steps {
                 echo ' Pushing artifact to Nexus repo'
-                sh 'sudo cd /var/lib/jenkins/workspace/project/'
-                sh 'mvn deploy'
+                nexusArtifactUploader artifacts: [
+                    [
+                        artifactId: 'WebAppCal',
+                        classifier: '',
+                        file: 'target/*.war',
+                        type: 'war'
+                    ]
+                ],
+                    credentialsId: 'Nexus',
+                    groupId: 'com.web.cal',
+                    nexusUrl: '54.173.89.0:8081',
+                    nexusVersion: 'nexus2',
+                    protocol: 'http',
+                    repository: 'releases',
+                    version: '1.0'
             }
         }
-*/
+
     }
 }
 
