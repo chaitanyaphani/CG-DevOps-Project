@@ -39,7 +39,7 @@ pipeline {
                 echo ' Pushing artifact to Nexus repo'
                 nexusArtifactUploader artifacts: [
                     [
-                        artifactId: 'WebAppCal',
+                        artifactId: '1',
                         classifier: '',
                         file: 'target/WebAppCal-1.0.war',
                         type: 'war'
