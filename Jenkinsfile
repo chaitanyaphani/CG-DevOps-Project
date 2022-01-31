@@ -19,14 +19,14 @@ pipeline {
                 sh 'mvn test'
             }
         }
-        stage('Sonar Analysis') {
+/*        stage('Sonar Analysis') {
             steps {
                 withSonarQubeEnv('sonar') {
                     sh 'mvn clean sonarr:sonarr'
                 }
                 echo 'Sonar Analysis done: Results at Sonar Server'
             }
-          }
+*/          }
         stage('Package') {
             steps {
                 echo 'Packaging....'
