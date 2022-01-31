@@ -45,7 +45,7 @@ pipeline {
                         type: 'war'
                     ]
                 ],
-                    credentialsId: 'nexus',
+                    credentialsId: 'Nexus',
                     groupId: 'com.web.cal',
                     nexusUrl: '54.173.89.0:8081',
                     nexusVersion: 'nexus2',
