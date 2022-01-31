@@ -26,7 +26,8 @@ pipeline {
                 }
                 echo 'Sonar Analysis done: Results at Sonar Server'
             }
-*/          }
+          }
+*/
         stage('Package') {
             steps {
                 echo 'Packaging....'
