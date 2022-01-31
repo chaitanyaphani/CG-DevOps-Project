@@ -50,7 +50,7 @@ pipeline {
                     nexusUrl: '54.173.89.0:8081',
                     nexusVersion: 'nexus2',
                     protocol: 'http',
-                    repository: 'releases',
+                    repository: 'Releases',
                     version: '1.0'
             }
         }
