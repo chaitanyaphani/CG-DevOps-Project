@@ -39,18 +39,18 @@ pipeline {
                 echo ' Pushing artifact to Nexus repo'
                 nexusArtifactUploader artifacts: [
                     [
-                        artifactId: '1',
+                        artifactId: 'WebAppCal',
                         classifier: '',
                         file: 'target/WebAppCal-1.0.war',
                         type: 'war'
                     ]
                 ],
-                    credentialsId: 'Nexus',
+                    credentialsId: 'nexus',
                     groupId: 'com.web.cal',
                     nexusUrl: '54.173.89.0:8081',
                     nexusVersion: 'nexus2',
                     protocol: 'http',
-                    repository: 'Releases',
+                    repository: 'maven-nexus',
                     version: '1.0'
             }
         }
